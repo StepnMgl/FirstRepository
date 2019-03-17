@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body onload="func()">
+<body onload="funk()" style="display: none">
 
 
-<form action='https://crm.zoho.eu/crm/WebToLeadForm' name=WebToLeads175018000000142273 method='POST'
-      onSubmit='javascript:document.charset="UTF-8"; return checkMandatory175018000000142273()' accept-charset='UTF-8'
-        id="zohoForm">
+<form action='https://crm.zoho.eu/crm/WebToLeadForm' name=WebToLeads173286000000142922 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory173286000000142922()' accept-charset='UTF-8'
+      id="zohoForm">
 
-    <input type='text' style='display:none;' name='xnQsjsdp'
-           value='6a0445a9ff00e12d39b7c1ecac528f6b7dcbb51c61562ed7addcbc5262610201'/>
+    <!-- Do not remove this code. -->
+    <input type='text' style='display:none;' name='xnQsjsdp' value='6a0445a9ff00e12d39b7c1ecac528f6b73bf8c652df820d4527c97379d165a6a'/>
     <input type='hidden' name='zc_gad' id='zc_gad' value=''/>
-    <input type='text' style='display:none;' name='xmIwtLD'
-           value='6126e43d2bbc1d63b52c26fef632b31953b291bd295bdb3468a7c17ec0f5337a'/>
-    <input type='text' style='display:none;' name='actionType' value='TGVhZHM='/>
+    <input type='text' style='display:none;' name='xmIwtLD' value='b309f1a798c2a22c550df56bedce3f619a741e25c61389f228d1de30901694ac'/>
+    <input type='text' style='display:none;'  name='actionType' value='TGVhZHM='/>
+
+
 
     <input type='text' style='display:none;' name='returnURL' id="idURL"
            value='https&#x3a;&#x2f;&#x2f;www.google.com.ua'/>
@@ -29,46 +29,44 @@
     <input type="text" id="idType" th:value="${type}">
 
 
-
-
     <script>
-        var mndFileds = new Array('Company', 'Last Name');
-        var fldLangVal = new Array('Company', 'Last Name');
-        var name = '';
-        var email = '';
+        var mndFileds=new Array('Company','Last Name');
+        var fldLangVal=new Array('Company','Last Name');
+        var name='';
+        var email='';
 
-        function checkMandatory175018000000142273() {
-            for (i = 0; i < mndFileds.length; i++) {
-                var fieldObj = document.forms['WebToLeads175018000000142273'][mndFileds[i]];
-                if (fieldObj) {
-                    if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length == 0) {
-                        if (fieldObj.type == 'file') {
+        function checkMandatory173286000000142922() {
+            for(i=0;i<mndFileds.length;i++) {
+                var fieldObj=document.forms['WebToLeads173286000000142922'][mndFileds[i]];
+                if(fieldObj) {
+                    if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length==0) {
+                        if(fieldObj.type =='file')
+                        {
                             alert('Please select a file to upload.');
                             fieldObj.focus();
                             return false;
                         }
-                        alert(fldLangVal[i] + ' cannot be empty.');
+                        alert(fldLangVal[i] +' cannot be empty.');
                         fieldObj.focus();
                         return false;
-                    } else if (fieldObj.nodeName == 'SELECT') {
-                        if (fieldObj.options[fieldObj.selectedIndex].value == '-None-') {
-                            alert(fldLangVal[i] + ' cannot be none.');
+                    }  else if(fieldObj.nodeName=='SELECT') {
+                        if(fieldObj.options[fieldObj.selectedIndex].value=='-None-') {
+                            alert(fldLangVal[i] +' cannot be none.');
                             fieldObj.focus();
                             return false;
                         }
-                    } else if (fieldObj.type == 'checkbox') {
-                        if (fieldObj.checked == false) {
-                            alert('Please accept  ' + fldLangVal[i]);
+                    } else if(fieldObj.type =='checkbox'){
+                        if(fieldObj.checked == false){
+                            alert('Please accept  '+fldLangVal[i]);
                             fieldObj.focus();
                             return false;
                         }
                     }
                     try {
-                        if (fieldObj.name == 'Last Name') {
+                        if(fieldObj.name == 'Last Name') {
                             name = fieldObj.value;
                         }
-                    } catch (e) {
-                    }
+                    } catch (e) {}
                 }
             }
         }
@@ -79,13 +77,12 @@
 <script>
     function funk() {
         formType = document.getElementById("idType").value;
-        switch (formType)
-        {
+        switch (formType) {
             case "first":
-                document.getElementById("idURL").setAttribute("value", "https://trialelaboration.herokuapp.com/first");
+                document.getElementById("idURL").setAttribute("value", "https://firstforma.herokuapp.com/first");
                 break;
             case "second":
-                document.getElementById("idURL").setAttribute("value", "https://trialelaboration.herokuapp.com/second");
+                document.getElementById("idURL").setAttribute("value", "https://firstforma.herokuapp.com/second");
                 break;
         }
         document.getElementById("zohoForm").submit();

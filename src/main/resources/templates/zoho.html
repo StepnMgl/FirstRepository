@@ -14,7 +14,7 @@
     <input type='text' style='display:none;' name='xmIwtLD' value='b309f1a798c2a22c550df56bedce3f613dc2a212bc04ac711d2e3ce437f69174'/>
     <input type='text' style='display:none;'  name='actionType' value='Q29udGFjdHM='/>
 
-    <input type='text' style='display:none;' name='returnURL' value='https://www.youtube.com/watch?v=OewQG2zZQNk' />
+    <input type='text' style='display:none;' name='returnURL' id="idURL" value='https://www.youtube.com/watch?v=OewQG2zZQNk' />
     <!-- Do not remove this code. -->
 
 
@@ -25,12 +25,12 @@
     <input type='text' name='Mobile' th:value="${type}"/>
     <input type='text' name='Email' th:value="${email}"/>
     <input type='text' name='Other City' th:value="${city}"/>
-    <input type='text' name='Other City' th:value="${type}"/>
+    <input type='text' id='type' th:value="${type}"/>
 
 
 
     <tr><td colspan='2' style='text-align:center; padding-top:15px;font-size:12px;'>
-        <input style='font-size:12px;color:black'  type='submit' value='Отправить' />
+        <input style='font-size:12px;color:black'  type='submit' value='Отправить' onclick="func();"/>
         <input  type='reset' style='font-size:12px;color:black' value='Сброс' />
     </td>
     </tr>
@@ -83,5 +83,20 @@
 
     </script>
 </form>
+<script>
+    function func()
+    {
+        formType=document.getElementById("idType").value;
+        switch(formType)
+        {
+            case "first":
+                document.getElementById("idURL").SetAttribute("value","https://trialelaboration.herokuapp.com/first");
+                break;
+            case "second":
+                document.getElementById("idURL").SetAttribute("value","https://trialelaboration.herokuapp.com/second");
+                break;
+        }
+    }
+</script>
 </body>
 </html>

@@ -2,101 +2,95 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
-<body>
+<body onload="func()">
 
-<form action='https://crm.zoho.eu/crm/WebToContactForm'  name=WebToContacts173286000000142322 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory173286000000142322()' accept-charset='UTF-8'>
 
-    <!-- Do not remove this code. -->
-    <input type='text' style='display:none;' name='xnQsjsdp' value='6a0445a9ff00e12d39b7c1ecac528f6b73bf8c652df820d4527c97379d165a6a'/>
+<form action='https://crm.zoho.eu/crm/WebToLeadForm' name=WebToLeads175018000000142273 method='POST'
+      onSubmit='javascript:document.charset="UTF-8"; return checkMandatory175018000000142273()' accept-charset='UTF-8'
+        id="zohoForm">
+
+    <input type='text' style='display:none;' name='xnQsjsdp'
+           value='6a0445a9ff00e12d39b7c1ecac528f6b7dcbb51c61562ed7addcbc5262610201'/>
     <input type='hidden' name='zc_gad' id='zc_gad' value=''/>
-    <input type='text' style='display:none;' name='xmIwtLD' value='b309f1a798c2a22c550df56bedce3f613dc2a212bc04ac711d2e3ce437f69174'/>
-    <input type='text' style='display:none;'  name='actionType' value='Q29udGFjdHM='/>
+    <input type='text' style='display:none;' name='xmIwtLD'
+           value='6126e43d2bbc1d63b52c26fef632b31953b291bd295bdb3468a7c17ec0f5337a'/>
+    <input type='text' style='display:none;' name='actionType' value='TGVhZHM='/>
 
-    <input type='text' style='display:none;' name='returnURL' id="idURL" value='https://www.youtube.com/watch?v=OewQG2zZQNk' />
-    <!-- Do not remove this code. -->
+    <input type='text' style='display:none;' name='returnURL' id="idURL"
+           value='https&#x3a;&#x2f;&#x2f;www.google.com.ua'/>
 
-
-
-
-    <input type='text' name='Last Name' th:value="${lname}" />
-    <input type='text' name='First Name' th:value="${company}"/>
-    <input type='text' name='Mobile' th:value="${type}"/>
+    <input type='text' name='Company' th:value="${company}"/>
+    <input type='text' name='Last Name' th:value="${lname}"/>
+    <input type='text' name='City' th:value="${city}"/>
     <input type='text' name='Email' th:value="${email}"/>
-    <input type='text' name='Other City' th:value="${city}"/>
-    <input type='text' id='type' th:value="${type}"/>
 
-
-
-    <tr><td colspan='2' style='text-align:center; padding-top:15px;font-size:12px;'>
-        <input style='font-size:12px;color:black'  type='submit' value='Отправить' onclick="func();"/>
-        <input  type='reset' style='font-size:12px;color:black' value='Сброс' />
-    </td>
-    </tr>
-
+    <input type="text" id="idType" th:value="${type}">
 
 
 
 
     <script>
-        var mndFileds=new Array('Last Name');
-        var fldLangVal=new Array('Фамилия');
-        var name='';
-        var email='';
+        var mndFileds = new Array('Company', 'Last Name');
+        var fldLangVal = new Array('Company', 'Last Name');
+        var name = '';
+        var email = '';
 
-        function checkMandatory173286000000142322() {
-            for(i=0;i<mndFileds.length;i++) {
-                var fieldObj=document.forms['WebToContacts173286000000142322'][mndFileds[i]];
-                if(fieldObj) {
-                    if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length==0) {
-                        if(fieldObj.type =='file')
-                        {
-                            alert('Выберите файл для отправки.');
+        function checkMandatory175018000000142273() {
+            for (i = 0; i < mndFileds.length; i++) {
+                var fieldObj = document.forms['WebToLeads175018000000142273'][mndFileds[i]];
+                if (fieldObj) {
+                    if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length == 0) {
+                        if (fieldObj.type == 'file') {
+                            alert('Please select a file to upload.');
                             fieldObj.focus();
                             return false;
                         }
-                        alert(fldLangVal[i] +' не может быть пустым.');
+                        alert(fldLangVal[i] + ' cannot be empty.');
                         fieldObj.focus();
                         return false;
-                    }  else if(fieldObj.nodeName=='SELECT') {
-                        if(fieldObj.options[fieldObj.selectedIndex].value=='-None-') {
-                            alert(fldLangVal[i] +' не может отсутствовать.');
+                    } else if (fieldObj.nodeName == 'SELECT') {
+                        if (fieldObj.options[fieldObj.selectedIndex].value == '-None-') {
+                            alert(fldLangVal[i] + ' cannot be none.');
                             fieldObj.focus();
                             return false;
                         }
-                    } else if(fieldObj.type =='checkbox'){
-                        if(fieldObj.checked == false){
-                            alert('Please accept  '+fldLangVal[i]);
+                    } else if (fieldObj.type == 'checkbox') {
+                        if (fieldObj.checked == false) {
+                            alert('Please accept  ' + fldLangVal[i]);
                             fieldObj.focus();
                             return false;
                         }
                     }
                     try {
-                        if(fieldObj.name == 'Last Name') {
+                        if (fieldObj.name == 'Last Name') {
                             name = fieldObj.value;
                         }
-                    } catch (e) {}
+                    } catch (e) {
+                    }
                 }
             }
         }
 
     </script>
 </form>
+
 <script>
-    function func()
-    {
-        formType=document.getElementById("idType").value;
-        switch(formType)
+    function funk() {
+        formType = document.getElementById("idType").value;
+        switch (formType)
         {
             case "first":
-                document.getElementById("idURL").SetAttribute("value","https://trialelaboration.herokuapp.com/first");
+                document.getElementById("idURL").setAttribute("value", "https://trialelaboration.herokuapp.com/first");
                 break;
             case "second":
-                document.getElementById("idURL").SetAttribute("value","https://trialelaboration.herokuapp.com/second");
+                document.getElementById("idURL").setAttribute("value", "https://trialelaboration.herokuapp.com/second");
                 break;
         }
+        document.getElementById("zohoForm").submit();
     }
 </script>
+
 </body>
 </html>
